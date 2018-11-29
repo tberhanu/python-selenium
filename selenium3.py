@@ -1,0 +1,17 @@
+from selenium import webdriver
+driver = webdriver.Chrome(executable_path=r'/Users/tess/Desktop/seleniumChrome/chromedriver')
+driver.get("https://www.seleniumhq.org/")
+eltQ_by_id = driver.find_element_by_id("q")
+print("Getting element by ID: ")
+print(eltQ_by_id)
+eltQ_by_class_name = driver.find_element_by_name("q")
+print("Getting element by CLASS NAME: ")
+print(eltQ_by_class_name)
+
+heading_by_relative_path = driver.find_element_by_xpath("//*[@id='mainContent']/h2[1]")
+print("Here is the first head h2: ")
+print(heading_by_relative_path)
+elt_by_class_name = driver.find_element_by_class_name("selenium-sponsors")
+print("By class name: ")
+print(elt_by_class_name)
+driver.close()
